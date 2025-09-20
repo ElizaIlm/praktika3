@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Input;
+using pr3.Classes;
+
 
 namespace pr3
 {
@@ -20,9 +23,20 @@ namespace pr3
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Pawn> Pawns = new List<Pawn>();
+        public static MainWindow init;
         public MainWindow()
         {
             InitializeComponent();
+            init = this;
+        }
+        private void SelecTile(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        public void OnSelect(Pawn pawn)
+        {
+
         }
     }
 }
