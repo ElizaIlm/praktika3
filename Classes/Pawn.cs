@@ -25,6 +25,10 @@ namespace pr3.Classes
         }
         public void SelectFigure(object sender, MouseButtonEventArgs e)
         {
+        //    internal  MouseButtonEventHandler SelectFigure()
+        //{
+        //    throw new NotImplementedException();
+        //}
             bool atack = false;
             Pawn SelectPawn = MainWindow.init.Pawns.Find(X => X.Select == true);
             if (SelectPawn != null)
@@ -46,19 +50,19 @@ namespace pr3.Classes
             {
                 MainWindow.init.OnSelect(this);
             }
-            if (this.Select)
+            if (Select)
             {
-                if (this.Black)
-                    this.Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,, /Images/Pawn (black).png")));
+                if (Black)
+                    Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,, /Images/Pawn (black).png")));
                 else
-                    this.Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,, /Images/Pawn.png")));
+                    Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,, /Images/Pawn.png")));
 
-                this.Select = false;
+                Select = false;
             }
             else
             {
-                this.Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,, /Images/Pawn (select).png")));
-                this.Select = true;
+               Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,, /Images/Pawn (select).png")));
+                Select = true;
             }
 
         }
